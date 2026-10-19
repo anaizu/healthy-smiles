@@ -213,6 +213,39 @@ a {
     grid-area: preguntas;
 }
 
+/* Turnos: las secciones del main se ubican por áreas */
+.contenido--turnos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "presentacion"
+        "horarios"
+        "contacto"
+        "obras"
+        "formulario";
+    gap: 48px;
+}
+
+.contenido--turnos .seccion {
+    margin-bottom: 0;
+}
+
+.area-horarios {
+    grid-area: horarios;
+}
+
+.area-contacto {
+    grid-area: contacto;
+}
+
+.area-obras {
+    grid-area: obras;
+}
+
+.area-formulario {
+    grid-area: formulario;
+}
+
 .tarjeta {
     display: flex;
     flex-direction: column;
@@ -576,6 +609,20 @@ a:active {
             "quienes      elegirnos"
             "tratamientos tratamientos"
             "consultorio  preguntas";
+    }
+
+    /* Turnos: datos de contacto a la izquierda y formulario a la derecha */
+    .contenido--turnos {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "presentacion presentacion"
+            "horarios     formulario"
+            "contacto     formulario"
+            "obras        formulario"
+            ".            formulario";
+        grid-template-rows: auto auto auto auto 1fr;
+        column-gap: 48px;
+        row-gap: 32px;
     }
 
     /* Tarjetas y galería en tres columnas */

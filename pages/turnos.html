@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turnos y contacto | Healthy Smiles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <p><a href="../index.html">Healthy Smiles</a></p>
-        <nav>
+    <header class="encabezado">
+        <p class="logo"><a href="../index.html">Healthy Smiles</a></p>
+        <nav class="menu">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="./tratamientos.html">Tratamientos</a></li>
@@ -19,17 +23,17 @@
         </nav>
     </header>
 
-    <main>
-        <section>
+    <main class="contenido">
+        <section class="seccion">
             <h1>Pedí tu turno</h1>
             <p>Podés reservar tu turno por teléfono, por mail o completando el formulario de esta página.</p>
-            <figure>
+            <figure class="figura">
                 <img src="../img/recepcion-turnos.jpg" alt="Recepcionista atendiendo a una paciente en el mostrador del consultorio">
-                <figcaption>Nuestro equipo de recepción te ayuda a encontrar el mejor horario.</figcaption>
+                <figcaption class="figura__texto">Nuestro equipo de recepción te ayuda a encontrar el mejor horario.</figcaption>
             </figure>
         </section>
 
-        <section>
+        <section class="seccion">
             <h2>Horarios de atención</h2>
             <ul>
                 <li>Lunes a viernes: 9:00 a 20:00 hs</li>
@@ -37,16 +41,16 @@
             </ul>
         </section>
 
-        <section>
+        <section class="seccion">
             <h2>Contacto</h2>
-            <address>
+            <address class="contacto">
                 <p>Av. Santa Fe 1234, piso 3, CABA</p>
                 <p>Teléfono: <a href="tel:+541145678900">(011) 4567-8900</a></p>
                 <p>Mail: <a href="mailto:turnos@healthysmiles.com.ar">turnos@healthysmiles.com.ar</a></p>
             </address>
         </section>
 
-        <section>
+        <section class="seccion">
             <h2>Obras sociales y prepagas</h2>
             <ul>
                 <li>OSDE</li>
@@ -57,9 +61,9 @@
             </ul>
         </section>
 
-        <section>
+        <section class="seccion">
             <h2>Formulario de turnos</h2>
-            <form action="#" method="get">
+            <form class="formulario" action="#" method="get">
                 <p>
                     <label for="nombre">Nombre y apellido</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -94,7 +98,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="pie">
         <p>&copy; 2026 Healthy Smiles. Todos los derechos reservados.</p>
         <ul>
             <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>

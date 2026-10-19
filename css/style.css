@@ -1,3 +1,12 @@
+/* ---------- 0. Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 /* ==========================================================
    Healthy Smiles - Hoja de estilos
    ==========================================================
@@ -58,9 +67,15 @@ a {
 
 /* ---------- 4. Header y navegación ---------- */
 
+/* Logo a la izquierda y menú a la derecha */
 .encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
     background-color: #0b4f6c;
-    padding: 16px 24px;
+    padding: 20px 32px;
 }
 
 .logo {
@@ -74,6 +89,14 @@ a {
     text-decoration: none;
 }
 
+/* Links del menú en una fila */
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    list-style: none;
+}
+
 .menu a {
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
@@ -85,26 +108,77 @@ a {
 /* ---------- 5. Contenido principal ---------- */
 
 .contenido {
-    padding: 24px;
+    padding: 40px 32px;
 }
 
+/* Cada sección apila su contenido con espacio entre elementos */
 .seccion {
-    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.seccion ul {
+    padding-left: 24px;
+}
+
+/* Variante en fila: las tarjetas o fotos se acomodan una al lado de la otra */
+.seccion--fila {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* El título de la sección ocupa toda la fila */
+.seccion--fila h2 {
+    flex-basis: 100%;
 }
 
 .tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1 1 320px;
     background-color: #ffffff;
     border-left: 4px solid #2bb3b1;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 24px;
+}
+
+/* Lista de tratamientos destacados del index */
+.seccion .etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.etiquetas li {
+    background-color: #ffffff;
+    border: 2px solid #2bb3b1;
+    border-radius: 24px;
+    padding: 8px 20px;
 }
 
 
 /* ---------- 6. Imágenes ---------- */
 
+.figura {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* En la galería, cada foto ocupa una parte de la fila */
+.seccion--fila .figura {
+    flex: 1 1 280px;
+}
+
+/* La foto ocupa el ancho disponible sin pasar de 480px de alto */
 .figura img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -119,6 +193,21 @@ a {
 
 .contacto {
     font-style: normal;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ffffff;
+    padding: 24px;
+}
+
+/* Cada campo: el label arriba y el input abajo */
+.formulario p {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .formulario label {
@@ -136,24 +225,37 @@ a {
 }
 
 .formulario button {
+    align-self: flex-start;
     background-color: #0b4f6c;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 600;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
 }
 
 
 /* ---------- 8. Footer ---------- */
 
+/* Copyright a la izquierda y redes a la derecha */
 .pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
     background-color: #0b4f6c;
     color: #ffffff;
-    padding: 24px;
+    padding: 24px 32px;
     font-size: 14px;
+}
+
+.pie ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
 }
 
 .pie a {

@@ -42,7 +42,7 @@ h3 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
 }
 
@@ -123,22 +123,77 @@ a {
     padding-left: 24px;
 }
 
-/* Variante en fila: las tarjetas o fotos se acomodan una al lado de la otra */
+/* Grilla de tarjetas o fotos: en celular, una sola columna */
 .seccion--fila {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
-/* El título de la sección ocupa toda la fila */
+/* El título de la sección ocupa todas las columnas */
 .seccion--fila h2 {
-    flex-basis: 100%;
+    grid-column: 1 / -1;
+}
+
+/* Presentación de la página: título, texto e imagen apilados */
+.seccion--hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "titulo"
+        "texto"
+        "imagen";
+    gap: 20px;
+}
+
+.seccion--hero h1 {
+    grid-area: titulo;
+}
+
+.seccion--hero p {
+    grid-area: texto;
+}
+
+.seccion--hero .figura {
+    grid-area: imagen;
+}
+
+/* Index: las secciones del main se ubican por áreas */
+.contenido--inicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "presentacion"
+        "quienes"
+        "tratamientos"
+        "elegirnos";
+    gap: 48px;
+}
+
+.contenido--inicio .seccion {
+    margin-bottom: 0;
+}
+
+.area-presentacion {
+    grid-area: presentacion;
+}
+
+.area-quienes {
+    grid-area: quienes;
+}
+
+.area-tratamientos {
+    grid-area: tratamientos;
+}
+
+.area-elegirnos {
+    grid-area: elegirnos;
 }
 
 .tarjeta {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    flex: 1 1 320px;
     background-color: #ffffff;
     border-left: 4px solid #2bb3b1;
     padding: 24px;
@@ -167,11 +222,6 @@ a {
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
-
-/* En la galería, cada foto ocupa una parte de la fila */
-.seccion--fila .figura {
-    flex: 1 1 280px;
 }
 
 /* La foto ocupa el ancho disponible sin pasar de 480px de alto */
@@ -260,4 +310,44 @@ a {
 
 .pie a {
     color: #ffffff;
+}
+
+
+/* ---------- 9. Media queries (escritorio) ---------- */
+
+@media (min-width: 1024px) {
+
+    /* Título principal más grande en pantallas anchas */
+    h1 {
+        font-size: 44px;
+    }
+
+    /* Presentación: texto a la izquierda e imagen a la derecha */
+    .seccion--hero {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "titulo imagen"
+            "texto  imagen";
+        grid-template-rows: auto 1fr;
+        column-gap: 48px;
+    }
+
+    /* Index: "Quiénes somos" y "Por qué elegirnos" en dos columnas */
+    .contenido--inicio {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "presentacion presentacion"
+            "quienes      elegirnos"
+            "tratamientos tratamientos";
+    }
+
+    /* Tarjetas y galería en tres columnas */
+    .seccion--fila {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Equipo: dos columnas para las cuatro tarjetas */
+    .seccion--dos {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

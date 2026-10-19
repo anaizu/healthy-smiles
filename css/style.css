@@ -307,6 +307,14 @@ a {
     object-fit: cover;
 }
 
+/* Galería de instalaciones: centrada y con ancho máximo para que
+   las fotos no se agranden de más y se pixelen */
+.carrusel--galeria {
+    align-self: center;
+    width: 100%;
+    max-width: 680px;
+}
+
 .carrusel .figura__img--abajo {
     object-position: center bottom;
 }

@@ -234,6 +234,11 @@ a {
     border-radius: 8px;
 }
 
+/* Recorte centrado abajo (sala de espera: que se vean las sillas) */
+.figura .figura__img--abajo {
+    object-position: center bottom;
+}
+
 .figura__texto {
     font-size: 14px;
     font-style: italic;

@@ -6,6 +6,22 @@
     box-sizing: border-box;
 }
 
+/* Bootstrap vuelve a poner márgenes en estas etiquetas: los sacamos
+   porque el espacio lo manejamos con gap */
+h1,
+h2,
+h3,
+p,
+ul,
+figure,
+address {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
 
 /* ==========================================================
    Healthy Smiles - Hoja de estilos
@@ -16,6 +32,8 @@
    - Acento:      #2bb3b1 (turquesa)      -> bordes y detalles
    - Texto:       #1f2d3a (gris azulado oscuro) -> texto del cuerpo
    - Blanco:      #ffffff                 -> fondo de tarjetas y texto sobre primario
+   - Hover:       #127a8a (petróleo medio) -> links y botones al pasar el mouse
+   - Hover claro: #9fe3e2 (turquesa claro) -> links sobre fondo oscuro
    ========================================================== */
 
 
@@ -65,17 +83,22 @@ a {
 }
 
 
-/* ---------- 4. Header y navegación ---------- */
+/* ---------- 4. Header y navegación (navbar de Bootstrap) ---------- */
 
-/* Logo a la izquierda y menú a la derecha */
 .encabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
     background-color: #0b4f6c;
-    padding: 20px 32px;
+    padding: 12px 20px;
+}
+
+/* Colores de la navbar de Bootstrap con la paleta propia
+   (.navbar.menu para ganarle al modo oscuro de Bootstrap) */
+.navbar.menu {
+    --bs-navbar-color: #ffffff;
+    --bs-navbar-hover-color: #9fe3e2;
+    --bs-navbar-active-color: #9fe3e2;
+    --bs-navbar-brand-color: #ffffff;
+    --bs-navbar-brand-hover-color: #9fe3e2;
+    --bs-navbar-toggler-border-color: #9fe3e2;
 }
 
 .logo {
@@ -84,24 +107,14 @@ a {
     font-weight: 700;
 }
 
-.logo a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Links del menú en una fila */
-.menu ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    list-style: none;
-}
-
-.menu a {
-    color: #ffffff;
+.menu .nav-link {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    text-decoration: none;
+}
+
+.menu .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
 
@@ -166,7 +179,9 @@ a {
         "presentacion"
         "quienes"
         "tratamientos"
-        "elegirnos";
+        "elegirnos"
+        "consultorio"
+        "preguntas";
     gap: 48px;
 }
 
@@ -190,6 +205,14 @@ a {
     grid-area: elegirnos;
 }
 
+.area-consultorio {
+    grid-area: consultorio;
+}
+
+.area-preguntas {
+    grid-area: preguntas;
+}
+
 .tarjeta {
     display: flex;
     flex-direction: column;
@@ -197,6 +220,23 @@ a {
     background-color: #ffffff;
     border-left: 4px solid #2bb3b1;
     padding: 24px;
+}
+
+/* Cards de Bootstrap: el padding lo pone .card-body */
+.card.tarjeta {
+    padding: 0;
+}
+
+.tarjeta .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+}
+
+.tarjeta .card-title,
+.tarjeta .card-text {
+    margin: 0;
 }
 
 /* Lista de tratamientos destacados del index */
@@ -253,7 +293,59 @@ a {
 }
 
 
-/* ---------- 7. Turnos: contacto y formulario ---------- */
+/* ---------- 7. Componentes de Bootstrap: carousel y accordion ---------- */
+
+.carrusel {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carrusel img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.carrusel .figura__img--abajo {
+    object-position: center bottom;
+}
+
+/* Texto de cada foto arriba, sobre un fondo oscuro para que se lea */
+.carrusel .carousel-caption {
+    top: 16px;
+    bottom: auto;
+    background-color: rgba(11, 79, 108, 0.85);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* Colores del accordion con la paleta propia */
+.preguntas {
+    --bs-accordion-color: #1f2d3a;
+    --bs-accordion-bg: #ffffff;
+    --bs-accordion-border-color: #2bb3b1;
+    --bs-accordion-btn-color: #0b4f6c;
+    --bs-accordion-active-color: #ffffff;
+    --bs-accordion-active-bg: #0b4f6c;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 3px #2bb3b1;
+}
+
+.preguntas .accordion-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* La flecha del accordion abierto en blanco, sobre el fondo oscuro */
+.preguntas .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ---------- 8. Turnos: contacto y formulario ---------- */
 
 .contacto {
     font-style: normal;
@@ -301,7 +393,7 @@ a {
 }
 
 
-/* ---------- 8. Footer ---------- */
+/* ---------- 9. Footer ---------- */
 
 /* Copyright a la izquierda y redes a la derecha */
 .pie {
@@ -327,7 +419,129 @@ a {
 }
 
 
-/* ---------- 9. Media queries (escritorio) ---------- */
+/* ---------- 10. Pseudoclases: hover, focus y active ---------- */
+
+/* Links: cambian de color al pasar el mouse */
+a {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a:hover {
+    color: #127a8a;
+}
+
+a:focus {
+    outline: 3px solid #2bb3b1;
+    outline-offset: 2px;
+}
+
+a:active {
+    color: #0b4f6c;
+}
+
+/* Links del header y del footer, sobre fondo oscuro */
+.menu .nav-link:hover,
+.menu .nav-link:focus,
+.menu .navbar-brand:hover,
+.menu .navbar-brand:focus,
+.pie a:hover,
+.pie a:focus {
+    color: #9fe3e2;
+}
+
+.menu .nav-link:active,
+.pie a:active {
+    color: #ffffff;
+}
+
+/* Botones: el del formulario, la hamburguesa y los controles del carousel */
+.formulario button,
+.navbar-toggler,
+.carousel-control-prev,
+.carousel-control-next,
+.accordion-button {
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.formulario button:hover {
+    background-color: #127a8a;
+}
+
+.formulario button:focus,
+.navbar-toggler:focus {
+    outline: 3px solid #2bb3b1;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.formulario button:active,
+.navbar-toggler:active,
+.accordion-button:active {
+    transform: scale(0.97);
+}
+
+.navbar-toggler:hover {
+    background-color: #127a8a;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover,
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    background-color: rgba(11, 79, 108, 0.4);
+}
+
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    background-color: rgba(11, 79, 108, 0.7);
+}
+
+.preguntas .accordion-button:hover {
+    background-color: #e8f6f8;
+}
+
+.preguntas .accordion-button:not(.collapsed):hover {
+    background-color: #127a8a;
+}
+
+/* Cards: se elevan al pasar el mouse o al enfocar un link adentro */
+.tarjeta {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover,
+.tarjeta:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(11, 79, 108, 0.15);
+}
+
+.tarjeta:active {
+    transform: translateY(-1px);
+}
+
+/* Campos del formulario: se marcan al escribir */
+.formulario input,
+.formulario select,
+.formulario textarea {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario input:hover,
+.formulario select:hover,
+.formulario textarea:hover {
+    border-color: #127a8a;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: #0b4f6c;
+    box-shadow: 0 0 0 3px #2bb3b1;
+}
+
+
+/* ---------- 11. Media queries (escritorio) ---------- */
 
 @media (min-width: 1024px) {
 
@@ -352,7 +566,8 @@ a {
         grid-template-areas:
             "presentacion presentacion"
             "quienes      elegirnos"
-            "tratamientos tratamientos";
+            "tratamientos tratamientos"
+            "consultorio  preguntas";
     }
 
     /* Tarjetas y galería en tres columnas */

@@ -1,0 +1,161 @@
+/* ==========================================================
+   Healthy Smiles - Hoja de estilos
+   ==========================================================
+   Paleta:
+   - Primario:    #0b4f6c (azul petróleo) -> textos de títulos, header y footer
+   - Secundario:  #e8f6f8 (celeste claro) -> fondo de la página
+   - Acento:      #2bb3b1 (turquesa)      -> bordes y detalles
+   - Texto:       #1f2d3a (gris azulado oscuro) -> texto del cuerpo
+   - Blanco:      #ffffff                 -> fondo de tarjetas y texto sobre primario
+   ========================================================== */
+
+
+/* ---------- 1. Fondo y tipografía general ---------- */
+
+body {
+    background-color: #e8f6f8;
+    color: #1f2d3a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+/* ---------- 2. Títulos ---------- */
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #0b4f6c;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+/* ---------- 3. Enlaces ---------- */
+
+a {
+    color: #0b4f6c;
+    font-weight: 600;
+}
+
+
+/* ---------- 4. Header y navegación ---------- */
+
+.encabezado {
+    background-color: #0b4f6c;
+    padding: 16px 24px;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu a {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+/* ---------- 5. Contenido principal ---------- */
+
+.contenido {
+    padding: 24px;
+}
+
+.seccion {
+    margin-bottom: 32px;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    border-left: 4px solid #2bb3b1;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+
+/* ---------- 6. Imágenes ---------- */
+
+.figura img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.figura__texto {
+    font-size: 14px;
+    font-style: italic;
+    color: #0b4f6c;
+}
+
+
+/* ---------- 7. Turnos: contacto y formulario ---------- */
+
+.contacto {
+    font-style: normal;
+}
+
+.formulario label {
+    font-weight: 600;
+    color: #0b4f6c;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border: 1px solid #2bb3b1;
+    padding: 8px;
+}
+
+.formulario button {
+    background-color: #0b4f6c;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+/* ---------- 8. Footer ---------- */
+
+.pie {
+    background-color: #0b4f6c;
+    color: #ffffff;
+    padding: 24px;
+    font-size: 14px;
+}
+
+.pie a {
+    color: #ffffff;
+}

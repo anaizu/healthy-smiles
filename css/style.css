@@ -239,6 +239,13 @@ a {
     object-position: center bottom;
 }
 
+/* Foto vertical en formato cuadrado, recortada un poco más abajo del centro
+   (tratamientos: que se vean el odontólogo y la paciente) */
+.figura .figura__img--cuadrada {
+    aspect-ratio: 1 / 1;
+    object-position: center 70%;
+}
+
 .figura__texto {
     font-size: 14px;
     font-style: italic;

@@ -25,7 +25,7 @@ h1 {
     font-weight: 700;
 
     // Título principal más grande en pantallas anchas
-    @include escritorio {
+    @include desde($escritorio) {
         font-size: 44px;
     }
 }

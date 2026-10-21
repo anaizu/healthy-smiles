@@ -15,7 +15,8 @@ $color-hover-claro: #9fe3e2;   // turquesa claro: links sobre fondo oscuro
 $fuente-titulos: 'Poppins', sans-serif;
 $fuente-texto: 'Open Sans', sans-serif;
 
-// Breakpoint
+// Breakpoints (mobile-first)
+$tablet: 768px;
 $escritorio: 1024px;
 
 // Medidas que se repiten

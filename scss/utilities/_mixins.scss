@@ -1,5 +1,5 @@
 // ==========================================================
-// Mixins: bloques de estilos que se reutilizan
+// Mixins y placeholders: bloques de estilos que se reutilizan
 // ==========================================================
 
 @use 'variables' as *;
@@ -10,9 +10,16 @@
     outline-offset: 2px;
 }
 
-// Estilos que se aplican desde el ancho de escritorio
-@mixin escritorio {
-    @media (min-width: $escritorio) {
+// Media query mobile-first: aplica los estilos desde el ancho que se le pasa
+// Uso: @include desde($tablet) { ... }
+@mixin desde($ancho) {
+    @media (min-width: $ancho) {
         @content;
     }
+}
+
+// Base compartida por las tarjetas y el formulario (se usa con @extend)
+%card-base {
+    background-color: $color-blanco;
+    padding: 24px;
 }

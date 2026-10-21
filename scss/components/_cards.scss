@@ -3,14 +3,14 @@
 // ==========================================================
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .tarjeta {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background-color: $color-blanco;
+    @extend %card-base;
     border-left: 4px solid $color-acento;
-    padding: 24px;
     transition: transform $transicion, box-shadow $transicion;
 
     // Cards de Bootstrap: el padding lo pone .card-body

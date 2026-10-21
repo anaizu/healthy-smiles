@@ -2,6 +2,7 @@
 // Secciones: contenido principal, Flexbox y Grid
 // ==========================================================
 
+@use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
 .contenido {
@@ -25,7 +26,7 @@
         }
 
         // "Quiénes somos" y "Por qué elegirnos" en dos columnas
-        @include escritorio {
+        @include desde($escritorio) {
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
                 "presentacion presentacion"
@@ -52,7 +53,7 @@
         }
 
         // Datos de contacto a la izquierda y formulario a la derecha
-        @include escritorio {
+        @include desde($escritorio) {
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
                 "presentacion presentacion"
@@ -89,14 +90,14 @@
             grid-column: 1 / -1;
         }
 
-        @include escritorio {
+        @include desde($escritorio) {
             grid-template-columns: repeat(3, 1fr);
         }
     }
 
     // Equipo: dos columnas para las cuatro tarjetas
     &--dos {
-        @include escritorio {
+        @include desde($escritorio) {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -124,7 +125,7 @@
         }
 
         // Texto a la izquierda e imagen a la derecha
-        @include escritorio {
+        @include desde($escritorio) {
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
                 "titulo imagen"

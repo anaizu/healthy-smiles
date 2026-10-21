@@ -1,0 +1,36 @@
+// ==========================================================
+// Footer: copyright a la izquierda y redes a la derecha
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    background-color: $color-primario;
+    color: $color-blanco;
+    padding: 24px 32px;
+    font-size: 14px;
+
+    ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+
+    a {
+        color: $color-blanco;
+
+        &:hover,
+        &:focus {
+            color: $color-hover-claro;
+        }
+
+        &:active {
+            color: $color-blanco;
+        }
+    }
+}

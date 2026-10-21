@@ -1,0 +1,16 @@
+// ==========================================================
+// Header: fondo y logo
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.encabezado {
+    background-color: $color-primario;
+    padding: 12px 20px;
+}
+
+.logo {
+    font-family: $fuente-titulos;
+    font-size: 26px;
+    font-weight: 700;
+}

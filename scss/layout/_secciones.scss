@@ -1,0 +1,177 @@
+// ==========================================================
+// Secciones: contenido principal, Flexbox y Grid
+// ==========================================================
+
+@use '../utilities/mixins' as *;
+
+.contenido {
+    padding: 40px 32px;
+
+    // Index: las secciones del main se ubican por áreas
+    &--inicio {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "presentacion"
+            "quienes"
+            "tratamientos"
+            "elegirnos"
+            "consultorio"
+            "preguntas";
+        gap: 48px;
+
+        .seccion {
+            margin-bottom: 0;
+        }
+
+        // "Quiénes somos" y "Por qué elegirnos" en dos columnas
+        @include escritorio {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "presentacion presentacion"
+                "quienes      elegirnos"
+                "tratamientos tratamientos"
+                "consultorio  preguntas";
+        }
+    }
+
+    // Turnos: las secciones del main se ubican por áreas
+    &--turnos {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "presentacion"
+            "horarios"
+            "contacto"
+            "obras"
+            "formulario";
+        gap: 48px;
+
+        .seccion {
+            margin-bottom: 0;
+        }
+
+        // Datos de contacto a la izquierda y formulario a la derecha
+        @include escritorio {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "presentacion presentacion"
+                "horarios     formulario"
+                "contacto     formulario"
+                "obras        formulario"
+                ".            formulario";
+            grid-template-rows: auto auto auto auto 1fr;
+            column-gap: 48px;
+            row-gap: 32px;
+        }
+    }
+}
+
+// Cada sección apila su contenido con espacio entre elementos
+.seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 48px;
+
+    ul {
+        padding-left: 24px;
+    }
+
+    // Grilla de tarjetas o fotos: una columna en celular, tres en escritorio
+    &--fila {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        // El título de la sección ocupa todas las columnas
+        h2 {
+            grid-column: 1 / -1;
+        }
+
+        @include escritorio {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    // Equipo: dos columnas para las cuatro tarjetas
+    &--dos {
+        @include escritorio {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // Presentación de la página: título, texto e imagen
+    &--hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "titulo"
+            "texto"
+            "imagen";
+        gap: 20px;
+
+        h1 {
+            grid-area: titulo;
+        }
+
+        p {
+            grid-area: texto;
+        }
+
+        .figura {
+            grid-area: imagen;
+        }
+
+        // Texto a la izquierda e imagen a la derecha
+        @include escritorio {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "titulo imagen"
+                "texto  imagen";
+            grid-template-rows: auto 1fr;
+            column-gap: 48px;
+        }
+    }
+}
+
+// Áreas de la grilla (index y turnos)
+.area-presentacion {
+    grid-area: presentacion;
+}
+
+.area-quienes {
+    grid-area: quienes;
+}
+
+.area-tratamientos {
+    grid-area: tratamientos;
+}
+
+.area-elegirnos {
+    grid-area: elegirnos;
+}
+
+.area-consultorio {
+    grid-area: consultorio;
+}
+
+.area-preguntas {
+    grid-area: preguntas;
+}
+
+.area-horarios {
+    grid-area: horarios;
+}
+
+.area-contacto {
+    grid-area: contacto;
+}
+
+.area-obras {
+    grid-area: obras;
+}
+
+.area-formulario {
+    grid-area: formulario;
+}

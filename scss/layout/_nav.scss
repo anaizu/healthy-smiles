@@ -1,0 +1,63 @@
+// ==========================================================
+// Navegación: navbar de Bootstrap con la paleta propia
+// ==========================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Colores de la navbar de Bootstrap
+// (.navbar.menu para ganarle al modo oscuro de Bootstrap)
+.navbar.menu {
+    --bs-navbar-color: #{$color-blanco};
+    --bs-navbar-hover-color: #{$color-hover-claro};
+    --bs-navbar-active-color: #{$color-hover-claro};
+    --bs-navbar-brand-color: #{$color-blanco};
+    --bs-navbar-brand-hover-color: #{$color-hover-claro};
+    --bs-navbar-toggler-border-color: #{$color-hover-claro};
+}
+
+.menu {
+    .nav-link {
+        font-family: $fuente-titulos;
+        font-weight: 500;
+
+        &.active {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-hover-claro;
+        }
+
+        &:active {
+            color: $color-blanco;
+        }
+    }
+
+    .navbar-brand {
+        &:hover,
+        &:focus {
+            color: $color-hover-claro;
+        }
+    }
+}
+
+// Botón hamburguesa
+.navbar-toggler {
+    transition: background-color $transicion, transform 0.15s ease, box-shadow $transicion;
+
+    &:hover {
+        background-color: $color-hover;
+    }
+
+    &:focus {
+        @include foco;
+        box-shadow: none;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

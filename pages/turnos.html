@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -41,7 +42,7 @@
             </figure>
         </section>
 
-        <section class="seccion area-horarios">
+        <section class="seccion area-horarios" data-aos="fade-up">
             <h2>Horarios de atención</h2>
             <ul>
                 <li>Lunes a viernes: 9:00 a 20:00 hs</li>
@@ -49,7 +50,7 @@
             </ul>
         </section>
 
-        <section class="seccion area-contacto">
+        <section class="seccion area-contacto" data-aos="fade-up">
             <h2>Contacto</h2>
             <address class="contacto">
                 <p>Av. Santa Fe 1234, piso 3, CABA</p>
@@ -58,7 +59,7 @@
             </address>
         </section>
 
-        <section class="seccion area-obras">
+        <section class="seccion area-obras" data-aos="fade-up">
             <h2>Obras sociales y prepagas</h2>
             <ul>
                 <li>OSDE</li>
@@ -69,7 +70,7 @@
             </ul>
         </section>
 
-        <section class="seccion area-formulario">
+        <section class="seccion area-formulario" data-aos="fade-up">
             <h2>Formulario de turnos</h2>
             <form class="formulario" action="#" method="get">
                 <p>
@@ -115,5 +116,13 @@
         </ul>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+    </script>
 </body>
 </html>

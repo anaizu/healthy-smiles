@@ -6,7 +6,11 @@
 @use '../utilities/mixins' as *;
 
 .contenido {
-    padding: 40px 32px;
+    padding: 32px 20px;
+
+    @include desde($tablet) {
+        padding: 40px 32px;
+    }
 
     // Index: las secciones del main se ubican por áreas
     &--inicio {
@@ -25,9 +29,19 @@
             margin-bottom: 0;
         }
 
-        // "Quiénes somos" y "Por qué elegirnos" en dos columnas
-        @include desde($escritorio) {
+        // Tablet: "Quiénes somos" y "Por qué elegirnos" en dos columnas
+        @include desde($tablet) {
             grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "presentacion presentacion"
+                "quienes      elegirnos"
+                "tratamientos tratamientos"
+                "consultorio  consultorio"
+                "preguntas    preguntas";
+        }
+
+        // Escritorio: además, el carousel y las preguntas uno al lado del otro
+        @include desde($escritorio) {
             grid-template-areas:
                 "presentacion presentacion"
                 "quienes      elegirnos"
@@ -52,9 +66,18 @@
             margin-bottom: 0;
         }
 
-        // Datos de contacto a la izquierda y formulario a la derecha
-        @include desde($escritorio) {
+        // Tablet: horarios y contacto en dos columnas
+        @include desde($tablet) {
             grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "presentacion presentacion"
+                "horarios     contacto"
+                "obras        obras"
+                "formulario   formulario";
+        }
+
+        // Escritorio: datos de contacto a la izquierda y formulario a la derecha
+        @include desde($escritorio) {
             grid-template-areas:
                 "presentacion presentacion"
                 "horarios     formulario"
@@ -79,7 +102,7 @@
         padding-left: 24px;
     }
 
-    // Grilla de tarjetas o fotos: una columna en celular, tres en escritorio
+    // Grilla de tarjetas: una columna en celular, dos en tablet y tres en escritorio
     &--fila {
         display: grid;
         grid-template-columns: 1fr;
@@ -88,6 +111,10 @@
         // El título de la sección ocupa todas las columnas
         h2 {
             grid-column: 1 / -1;
+        }
+
+        @include desde($tablet) {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @include desde($escritorio) {

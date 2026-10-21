@@ -24,15 +24,23 @@ h1 {
     font-size: 32px;
     font-weight: 700;
 
-    // Título principal más grande en pantallas anchas
+    // El título principal crece en pantallas más anchas
+    @include desde($tablet) {
+        font-size: 38px;
+    }
+
     @include desde($escritorio) {
         font-size: 44px;
     }
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
+
+    @include desde($tablet) {
+        font-size: 28px;
+    }
 }
 
 h3 {

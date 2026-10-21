@@ -63,6 +63,11 @@ h1 {
   font-size: 32px;
   font-weight: 700;
 }
+@media (min-width: 768px) {
+  h1 {
+    font-size: 38px;
+  }
+}
 @media (min-width: 1024px) {
   h1 {
     font-size: 44px;
@@ -70,8 +75,13 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
 }
 
 h3 {
@@ -86,8 +96,13 @@ h3 {
 
 .logo {
   font-family: "Poppins", sans-serif;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
+}
+@media (min-width: 768px) {
+  .logo {
+    font-size: 26px;
+  }
 }
 
 .navbar.menu {
@@ -133,7 +148,12 @@ h3 {
 }
 
 .contenido {
-  padding: 40px 32px;
+  padding: 32px 20px;
+}
+@media (min-width: 768px) {
+  .contenido {
+    padding: 40px 32px;
+  }
 }
 .contenido--inicio {
   display: grid;
@@ -144,9 +164,14 @@ h3 {
 .contenido--inicio .seccion {
   margin-bottom: 0;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .contenido--inicio {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: "presentacion presentacion" "quienes      elegirnos" "tratamientos tratamientos" "consultorio  consultorio" "preguntas    preguntas";
+  }
+}
+@media (min-width: 1024px) {
+  .contenido--inicio {
     grid-template-areas: "presentacion presentacion" "quienes      elegirnos" "tratamientos tratamientos" "consultorio  preguntas";
   }
 }
@@ -159,9 +184,14 @@ h3 {
 .contenido--turnos .seccion {
   margin-bottom: 0;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .contenido--turnos {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: "presentacion presentacion" "horarios     contacto" "obras        obras" "formulario   formulario";
+  }
+}
+@media (min-width: 1024px) {
+  .contenido--turnos {
     grid-template-areas: "presentacion presentacion" "horarios     formulario" "contacto     formulario" "obras        formulario" ".            formulario";
     grid-template-rows: auto auto auto auto 1fr;
     column-gap: 48px;
@@ -185,6 +215,11 @@ h3 {
 }
 .seccion--fila h2 {
   grid-column: 1/-1;
+}
+@media (min-width: 768px) {
+  .seccion--fila {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 1024px) {
   .seccion--fila {

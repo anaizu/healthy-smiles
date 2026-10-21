@@ -3,6 +3,7 @@
 // ==========================================================
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .encabezado {
     background-color: $color-primario;
@@ -11,6 +12,10 @@
 
 .logo {
     font-family: $fuente-titulos;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
+
+    @include desde($tablet) {
+        font-size: 26px;
+    }
 }

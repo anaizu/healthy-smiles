@@ -1,0 +1,23 @@
+// ==========================================================
+// Healthy Smiles - Punto de entrada de los estilos
+// Compila a css/style.css con: npm run sass
+// ==========================================================
+
+// Base
+@use 'base/base';
+@use 'base/tipografia';
+
+// Layout
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/secciones';
+@use 'layout/footer';
+
+// Componentes
+@use 'components/imagenes';
+@use 'components/cards';
+@use 'components/etiquetas';
+@use 'components/carousel';
+@use 'components/accordion';
+@use 'components/formulario';
+@use 'components/buttons';

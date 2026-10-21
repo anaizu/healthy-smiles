@@ -1,0 +1,32 @@
+// ==========================================================
+// Botones: botón del formulario de turnos
+// ==========================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.formulario button {
+    align-self: flex-start;
+    background-color: $color-primario;
+    color: $color-blanco;
+    font-family: $fuente-titulos;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color $transicion, transform 0.15s ease, box-shadow $transicion;
+
+    &:hover {
+        background-color: $color-hover;
+    }
+
+    &:focus {
+        @include foco;
+        box-shadow: none;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

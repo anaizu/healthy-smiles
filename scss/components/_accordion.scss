@@ -1,0 +1,44 @@
+// ==========================================================
+// Accordion de Bootstrap con la paleta propia
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.preguntas {
+    --bs-accordion-color: #{$color-texto};
+    --bs-accordion-bg: #{$color-blanco};
+    --bs-accordion-border-color: #{$color-acento};
+    --bs-accordion-btn-color: #{$color-primario};
+    --bs-accordion-active-color: #{$color-blanco};
+    --bs-accordion-active-bg: #{$color-primario};
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 3px #{$color-acento};
+
+    .accordion-button {
+        font-family: $fuente-titulos;
+        font-size: 17px;
+        font-weight: 500;
+
+        &:hover {
+            background-color: $color-fondo;
+        }
+
+        &:not(.collapsed) {
+            // La flecha del accordion abierto en blanco, sobre el fondo oscuro
+            &::after {
+                filter: brightness(0) invert(1);
+            }
+
+            &:hover {
+                background-color: $color-hover;
+            }
+        }
+    }
+}
+
+.accordion-button {
+    transition: background-color $transicion, transform 0.15s ease, box-shadow $transicion;
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

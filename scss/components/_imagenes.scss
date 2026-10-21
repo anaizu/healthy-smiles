@@ -1,0 +1,39 @@
+// ==========================================================
+// Imágenes: figure con su epígrafe
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.figura {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    // Todas las fotos con la misma proporción (4:3), recortadas desde el centro
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: $radio;
+    }
+
+    // Recorte centrado abajo (sala de espera: que se vean las sillas)
+    .figura__img--abajo {
+        object-position: center bottom;
+    }
+
+    // Foto vertical en formato cuadrado, recortada un poco más abajo del centro
+    // (tratamientos: que se vean el odontólogo y la paciente)
+    .figura__img--cuadrada {
+        aspect-ratio: 1 / 1;
+        object-position: center 70%;
+    }
+
+    &__texto {
+        font-size: 14px;
+        font-style: italic;
+        color: $color-primario;
+    }
+}

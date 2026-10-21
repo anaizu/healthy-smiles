@@ -1,13 +1,9 @@
-/* ---------- 0. Reset ---------- */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Bootstrap vuelve a poner márgenes en estas etiquetas: los sacamos
-   porque el espacio lo manejamos con gap */
 h1,
 h2,
 h3,
@@ -15,623 +11,482 @@ p,
 ul,
 figure,
 address {
-    margin: 0;
+  margin: 0;
 }
 
 ul {
-    padding-left: 0;
+  padding-left: 0;
 }
-
-
-/* ==========================================================
-   Healthy Smiles - Hoja de estilos
-   ==========================================================
-   Paleta:
-   - Primario:    #0b4f6c (azul petróleo) -> textos de títulos, header y footer
-   - Secundario:  #e8f6f8 (celeste claro) -> fondo de la página
-   - Acento:      #2bb3b1 (turquesa)      -> bordes y detalles
-   - Texto:       #1f2d3a (gris azulado oscuro) -> texto del cuerpo
-   - Blanco:      #ffffff                 -> fondo de tarjetas y texto sobre primario
-   - Hover:       #127a8a (petróleo medio) -> links y botones al pasar el mouse
-   - Hover claro: #9fe3e2 (turquesa claro) -> links sobre fondo oscuro
-   ========================================================== */
-
-
-/* ---------- 1. Fondo y tipografía general ---------- */
 
 body {
-    background-color: #e8f6f8;
-    color: #1f2d3a;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
+  background-color: #e8f6f8;
+  color: #1f2d3a;
 }
 
+a {
+  color: #0b4f6c;
+  font-weight: 600;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+a:hover {
+  color: #127a8a;
+}
+a:focus {
+  outline: 3px solid #2bb3b1;
+  outline-offset: 2px;
+}
+a:active {
+  color: #0b4f6c;
+}
 
-/* ---------- 2. Títulos ---------- */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
 
 h1,
 h2,
 h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #0b4f6c;
-    line-height: 1.2;
+  font-family: "Poppins", sans-serif;
+  color: #0b4f6c;
+  line-height: 1.2;
 }
 
 h1 {
-    font-size: 32px;
-    font-weight: 700;
+  font-size: 32px;
+  font-weight: 700;
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 44px;
+  }
 }
 
 h2 {
-    font-size: 28px;
-    font-weight: 600;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
 }
-
-
-/* ---------- 3. Enlaces ---------- */
-
-a {
-    color: #0b4f6c;
-    font-weight: 600;
-}
-
-
-/* ---------- 4. Header y navegación (navbar de Bootstrap) ---------- */
 
 .encabezado {
-    background-color: #0b4f6c;
-    padding: 12px 20px;
-}
-
-/* Colores de la navbar de Bootstrap con la paleta propia
-   (.navbar.menu para ganarle al modo oscuro de Bootstrap) */
-.navbar.menu {
-    --bs-navbar-color: #ffffff;
-    --bs-navbar-hover-color: #9fe3e2;
-    --bs-navbar-active-color: #9fe3e2;
-    --bs-navbar-brand-color: #ffffff;
-    --bs-navbar-brand-hover-color: #9fe3e2;
-    --bs-navbar-toggler-border-color: #9fe3e2;
+  background-color: #0b4f6c;
+  padding: 12px 20px;
 }
 
 .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.navbar.menu {
+  --bs-navbar-color: #ffffff;
+  --bs-navbar-hover-color: #9fe3e2;
+  --bs-navbar-active-color: #9fe3e2;
+  --bs-navbar-brand-color: #ffffff;
+  --bs-navbar-brand-hover-color: #9fe3e2;
+  --bs-navbar-toggler-border-color: #9fe3e2;
 }
 
 .menu .nav-link {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
-
 .menu .nav-link.active {
-    text-decoration: underline;
-    text-underline-offset: 6px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.menu .nav-link:hover, .menu .nav-link:focus {
+  color: #9fe3e2;
+}
+.menu .nav-link:active {
+  color: #ffffff;
+}
+.menu .navbar-brand:hover, .menu .navbar-brand:focus {
+  color: #9fe3e2;
 }
 
-
-/* ---------- 5. Contenido principal ---------- */
+.navbar-toggler {
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.navbar-toggler:hover {
+  background-color: #127a8a;
+}
+.navbar-toggler:focus {
+  outline: 3px solid #2bb3b1;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+.navbar-toggler:active {
+  transform: scale(0.97);
+}
 
 .contenido {
-    padding: 40px 32px;
+  padding: 40px 32px;
 }
-
-/* Cada sección apila su contenido con espacio entre elementos */
-.seccion {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 48px;
-}
-
-.seccion ul {
-    padding-left: 24px;
-}
-
-/* Grilla de tarjetas o fotos: en celular, una sola columna */
-.seccion--fila {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-/* El título de la sección ocupa todas las columnas */
-.seccion--fila h2 {
-    grid-column: 1 / -1;
-}
-
-/* Presentación de la página: título, texto e imagen apilados */
-.seccion--hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "titulo"
-        "texto"
-        "imagen";
-    gap: 20px;
-}
-
-.seccion--hero h1 {
-    grid-area: titulo;
-}
-
-.seccion--hero p {
-    grid-area: texto;
-}
-
-.seccion--hero .figura {
-    grid-area: imagen;
-}
-
-/* Index: las secciones del main se ubican por áreas */
 .contenido--inicio {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "presentacion"
-        "quienes"
-        "tratamientos"
-        "elegirnos"
-        "consultorio"
-        "preguntas";
-    gap: 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "presentacion" "quienes" "tratamientos" "elegirnos" "consultorio" "preguntas";
+  gap: 48px;
+}
+.contenido--inicio .seccion {
+  margin-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .contenido--inicio {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "presentacion presentacion" "quienes      elegirnos" "tratamientos tratamientos" "consultorio  preguntas";
+  }
+}
+.contenido--turnos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "presentacion" "horarios" "contacto" "obras" "formulario";
+  gap: 48px;
+}
+.contenido--turnos .seccion {
+  margin-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .contenido--turnos {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "presentacion presentacion" "horarios     formulario" "contacto     formulario" "obras        formulario" ".            formulario";
+    grid-template-rows: auto auto auto auto 1fr;
+    column-gap: 48px;
+    row-gap: 32px;
+  }
 }
 
-.contenido--inicio .seccion {
-    margin-bottom: 0;
+.seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+.seccion ul {
+  padding-left: 24px;
+}
+.seccion--fila {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.seccion--fila h2 {
+  grid-column: 1/-1;
+}
+@media (min-width: 1024px) {
+  .seccion--fila {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .seccion--dos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.seccion--hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "titulo" "texto" "imagen";
+  gap: 20px;
+}
+.seccion--hero h1 {
+  grid-area: titulo;
+}
+.seccion--hero p {
+  grid-area: texto;
+}
+.seccion--hero .figura {
+  grid-area: imagen;
+}
+@media (min-width: 1024px) {
+  .seccion--hero {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo imagen" "texto  imagen";
+    grid-template-rows: auto 1fr;
+    column-gap: 48px;
+  }
 }
 
 .area-presentacion {
-    grid-area: presentacion;
+  grid-area: presentacion;
 }
 
 .area-quienes {
-    grid-area: quienes;
+  grid-area: quienes;
 }
 
 .area-tratamientos {
-    grid-area: tratamientos;
+  grid-area: tratamientos;
 }
 
 .area-elegirnos {
-    grid-area: elegirnos;
+  grid-area: elegirnos;
 }
 
 .area-consultorio {
-    grid-area: consultorio;
+  grid-area: consultorio;
 }
 
 .area-preguntas {
-    grid-area: preguntas;
-}
-
-/* Turnos: las secciones del main se ubican por áreas */
-.contenido--turnos {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "presentacion"
-        "horarios"
-        "contacto"
-        "obras"
-        "formulario";
-    gap: 48px;
-}
-
-.contenido--turnos .seccion {
-    margin-bottom: 0;
+  grid-area: preguntas;
 }
 
 .area-horarios {
-    grid-area: horarios;
+  grid-area: horarios;
 }
 
 .area-contacto {
-    grid-area: contacto;
+  grid-area: contacto;
 }
 
 .area-obras {
-    grid-area: obras;
+  grid-area: obras;
 }
 
 .area-formulario {
-    grid-area: formulario;
+  grid-area: formulario;
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #0b4f6c;
+  color: #ffffff;
+  padding: 24px 32px;
+  font-size: 14px;
+}
+.pie ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.pie a {
+  color: #ffffff;
+}
+.pie a:hover, .pie a:focus {
+  color: #9fe3e2;
+}
+.pie a:active {
+  color: #ffffff;
+}
+
+.figura {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.figura .figura__img--abajo {
+  object-position: center bottom;
+}
+.figura .figura__img--cuadrada {
+  aspect-ratio: 1/1;
+  object-position: center 70%;
+}
+.figura__texto {
+  font-size: 14px;
+  font-style: italic;
+  color: #0b4f6c;
 }
 
 .tarjeta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background-color: #ffffff;
-    border-left: 4px solid #2bb3b1;
-    padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  border-left: 4px solid #2bb3b1;
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-/* Cards de Bootstrap: el padding lo pone .card-body */
-.card.tarjeta {
-    padding: 0;
+.tarjeta.card {
+  padding: 0;
 }
-
 .tarjeta .card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
 }
-
 .tarjeta .card-title,
 .tarjeta .card-text {
-    margin: 0;
+  margin: 0;
+}
+.tarjeta:hover, .tarjeta:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(11, 79, 108, 0.15);
+}
+.tarjeta:active {
+  transform: translateY(-1px);
 }
 
-/* Lista de tratamientos destacados del index */
 .seccion .etiquetas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    list-style: none;
-    padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding-left: 0;
 }
 
 .etiquetas li {
-    background-color: #ffffff;
-    border: 2px solid #2bb3b1;
-    border-radius: 24px;
-    padding: 8px 20px;
+  background-color: #ffffff;
+  border: 2px solid #2bb3b1;
+  border-radius: 24px;
+  padding: 8px 20px;
 }
-
-
-/* ---------- 6. Imágenes ---------- */
-
-.figura {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* Todas las fotos con la misma proporción (4:3), recortadas desde el centro */
-.figura img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Recorte centrado abajo (sala de espera: que se vean las sillas) */
-.figura .figura__img--abajo {
-    object-position: center bottom;
-}
-
-/* Foto vertical en formato cuadrado, recortada un poco más abajo del centro
-   (tratamientos: que se vean el odontólogo y la paciente) */
-.figura .figura__img--cuadrada {
-    aspect-ratio: 1 / 1;
-    object-position: center 70%;
-}
-
-.figura__texto {
-    font-size: 14px;
-    font-style: italic;
-    color: #0b4f6c;
-}
-
-
-/* ---------- 7. Componentes de Bootstrap: carousel y accordion ---------- */
 
 .carrusel {
-    border-radius: 8px;
-    overflow: hidden;
+  border-radius: 8px;
+  overflow: hidden;
 }
-
 .carrusel img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
 }
-
-/* Galería de instalaciones: centrada y con ancho máximo para que
-   las fotos no se agranden de más y se pixelen */
 .carrusel--galeria {
-    align-self: center;
-    width: 100%;
-    max-width: 680px;
+  align-self: center;
+  width: 100%;
+  max-width: 680px;
 }
-
 .carrusel .figura__img--abajo {
-    object-position: center bottom;
+  object-position: center bottom;
 }
-
-/* Texto de cada foto arriba, sobre un fondo oscuro para que se lea */
 .carrusel .carousel-caption {
-    top: 16px;
-    bottom: auto;
-    background-color: rgba(11, 79, 108, 0.85);
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+  top: 16px;
+  bottom: auto;
+  background-color: rgba(11, 79, 108, 0.85);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
-/* Colores del accordion con la paleta propia */
+.carousel-control-prev,
+.carousel-control-next {
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.carousel-control-prev:hover, .carousel-control-prev:focus,
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+  background-color: rgba(11, 79, 108, 0.4);
+}
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  background-color: rgba(11, 79, 108, 0.7);
+}
+
 .preguntas {
-    --bs-accordion-color: #1f2d3a;
-    --bs-accordion-bg: #ffffff;
-    --bs-accordion-border-color: #2bb3b1;
-    --bs-accordion-btn-color: #0b4f6c;
-    --bs-accordion-active-color: #ffffff;
-    --bs-accordion-active-bg: #0b4f6c;
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 3px #2bb3b1;
+  --bs-accordion-color: #1f2d3a;
+  --bs-accordion-bg: #ffffff;
+  --bs-accordion-border-color: #2bb3b1;
+  --bs-accordion-btn-color: #0b4f6c;
+  --bs-accordion-active-color: #ffffff;
+  --bs-accordion-active-bg: #0b4f6c;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 3px #2bb3b1;
 }
-
 .preguntas .accordion-button {
-    font-family: 'Poppins', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
 }
-
-/* La flecha del accordion abierto en blanco, sobre el fondo oscuro */
+.preguntas .accordion-button:hover {
+  background-color: #e8f6f8;
+}
 .preguntas .accordion-button:not(.collapsed)::after {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+.preguntas .accordion-button:not(.collapsed):hover {
+  background-color: #127a8a;
 }
 
-
-/* ---------- 8. Turnos: contacto y formulario ---------- */
+.accordion-button {
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.accordion-button:active {
+  transform: scale(0.97);
+}
 
 .contacto {
-    font-style: normal;
+  font-style: normal;
 }
 
 .formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    background-color: #ffffff;
-    padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 24px;
 }
-
-/* Cada campo: el label arriba y el input abajo */
 .formulario p {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-
 .formulario label {
-    font-weight: 600;
-    color: #0b4f6c;
+  font-weight: 600;
+  color: #0b4f6c;
 }
-
 .formulario input,
 .formulario select,
 .formulario textarea {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    border: 1px solid #2bb3b1;
-    padding: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  border: 1px solid #2bb3b1;
+  padding: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
-.formulario button {
-    align-self: flex-start;
-    background-color: #0b4f6c;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-}
-
-
-/* ---------- 9. Footer ---------- */
-
-/* Copyright a la izquierda y redes a la derecha */
-.pie {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    background-color: #0b4f6c;
-    color: #ffffff;
-    padding: 24px 32px;
-    font-size: 14px;
-}
-
-.pie ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.pie a {
-    color: #ffffff;
-}
-
-
-/* ---------- 10. Pseudoclases: hover, focus y active ---------- */
-
-/* Links: cambian de color al pasar el mouse */
-a {
-    transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-a:hover {
-    color: #127a8a;
-}
-
-a:focus {
-    outline: 3px solid #2bb3b1;
-    outline-offset: 2px;
-}
-
-a:active {
-    color: #0b4f6c;
-}
-
-/* Links del header y del footer, sobre fondo oscuro */
-.menu .nav-link:hover,
-.menu .nav-link:focus,
-.menu .navbar-brand:hover,
-.menu .navbar-brand:focus,
-.pie a:hover,
-.pie a:focus {
-    color: #9fe3e2;
-}
-
-.menu .nav-link:active,
-.pie a:active {
-    color: #ffffff;
-}
-
-/* Botones: el del formulario, la hamburguesa y los controles del carousel */
-.formulario button,
-.navbar-toggler,
-.carousel-control-prev,
-.carousel-control-next,
-.accordion-button {
-    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-}
-
-.formulario button:hover {
-    background-color: #127a8a;
-}
-
-.formulario button:focus,
-.navbar-toggler:focus {
-    outline: 3px solid #2bb3b1;
-    outline-offset: 2px;
-    box-shadow: none;
-}
-
-.formulario button:active,
-.navbar-toggler:active,
-.accordion-button:active {
-    transform: scale(0.97);
-}
-
-.navbar-toggler:hover {
-    background-color: #127a8a;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover,
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
-    background-color: rgba(11, 79, 108, 0.4);
-}
-
-.carousel-control-prev:active,
-.carousel-control-next:active {
-    background-color: rgba(11, 79, 108, 0.7);
-}
-
-.preguntas .accordion-button:hover {
-    background-color: #e8f6f8;
-}
-
-.preguntas .accordion-button:not(.collapsed):hover {
-    background-color: #127a8a;
-}
-
-/* Cards: se elevan al pasar el mouse o al enfocar un link adentro */
-.tarjeta {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tarjeta:hover,
-.tarjeta:focus-within {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(11, 79, 108, 0.15);
-}
-
-.tarjeta:active {
-    transform: translateY(-1px);
-}
-
-/* Campos del formulario: se marcan al escribir */
-.formulario input,
-.formulario select,
-.formulario textarea {
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
 .formulario input:hover,
 .formulario select:hover,
 .formulario textarea:hover {
-    border-color: #127a8a;
+  border-color: #127a8a;
 }
-
 .formulario input:focus,
 .formulario select:focus,
 .formulario textarea:focus {
-    outline: none;
-    border-color: #0b4f6c;
-    box-shadow: 0 0 0 3px #2bb3b1;
+  outline: none;
+  border-color: #0b4f6c;
+  box-shadow: 0 0 0 3px #2bb3b1;
 }
 
-
-/* ---------- 11. Media queries (escritorio) ---------- */
-
-@media (min-width: 1024px) {
-
-    /* Título principal más grande en pantallas anchas */
-    h1 {
-        font-size: 44px;
-    }
-
-    /* Presentación: texto a la izquierda e imagen a la derecha */
-    .seccion--hero {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "titulo imagen"
-            "texto  imagen";
-        grid-template-rows: auto 1fr;
-        column-gap: 48px;
-    }
-
-    /* Index: "Quiénes somos" y "Por qué elegirnos" en dos columnas */
-    .contenido--inicio {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "presentacion presentacion"
-            "quienes      elegirnos"
-            "tratamientos tratamientos"
-            "consultorio  preguntas";
-    }
-
-    /* Turnos: datos de contacto a la izquierda y formulario a la derecha */
-    .contenido--turnos {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "presentacion presentacion"
-            "horarios     formulario"
-            "contacto     formulario"
-            "obras        formulario"
-            ".            formulario";
-        grid-template-rows: auto auto auto auto 1fr;
-        column-gap: 48px;
-        row-gap: 32px;
-    }
-
-    /* Tarjetas y galería en tres columnas */
-    .seccion--fila {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Equipo: dos columnas para las cuatro tarjetas */
-    .seccion--dos {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.formulario button {
+  align-self: flex-start;
+  background-color: #0b4f6c;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.formulario button:hover {
+  background-color: #127a8a;
+}
+.formulario button:focus {
+  outline: 3px solid #2bb3b1;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+.formulario button:active {
+  transform: scale(0.97);
 }

@@ -1,0 +1,50 @@
+// ==========================================================
+// Formulario y datos de contacto (turnos)
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.contacto {
+    font-style: normal;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: $color-blanco;
+    padding: 24px;
+
+    // Cada campo: el label arriba y el input abajo
+    p {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    label {
+        font-weight: 600;
+        color: $color-primario;
+    }
+
+    // Campos: se marcan al pasar el mouse y al escribir
+    input,
+    select,
+    textarea {
+        font-family: $fuente-texto;
+        font-size: 16px;
+        border: 1px solid $color-acento;
+        padding: 8px;
+        transition: border-color $transicion, box-shadow $transicion;
+
+        &:hover {
+            border-color: $color-hover;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $color-primario;
+            box-shadow: 0 0 0 3px $color-acento;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+// ==========================================================
+// Etiquetas: lista de tratamientos destacados del index
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.seccion .etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.etiquetas li {
+    background-color: $color-blanco;
+    border: 2px solid $color-acento;
+    border-radius: 24px;
+    padding: 8px 20px;
+}

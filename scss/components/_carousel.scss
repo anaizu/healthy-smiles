@@ -1,0 +1,55 @@
+// ==========================================================
+// Carousel de Bootstrap con la paleta propia
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.carrusel {
+    border-radius: $radio;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    // Galería de instalaciones: centrada y con ancho máximo para que
+    // las fotos no se agranden de más y se pixelen
+    &--galeria {
+        align-self: center;
+        width: 100%;
+        max-width: 680px;
+    }
+
+    .figura__img--abajo {
+        object-position: center bottom;
+    }
+
+    // Texto de cada foto arriba, sobre un fondo oscuro para que se lea
+    .carousel-caption {
+        top: 16px;
+        bottom: auto;
+        background-color: rgba($color-primario, 0.85);
+        border-radius: $radio;
+        padding: 8px 16px;
+        font-family: $fuente-titulos;
+        font-weight: 500;
+    }
+}
+
+// Flechas para pasar de foto
+.carousel-control-prev,
+.carousel-control-next {
+    transition: background-color $transicion, transform 0.15s ease, box-shadow $transicion;
+
+    &:hover,
+    &:focus {
+        background-color: rgba($color-primario, 0.4);
+    }
+
+    &:active {
+        background-color: rgba($color-primario, 0.7);
+    }
+}

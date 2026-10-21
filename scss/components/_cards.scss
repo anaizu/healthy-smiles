@@ -1,0 +1,43 @@
+// ==========================================================
+// Cards: tarjetas propias y cards de Bootstrap
+// ==========================================================
+
+@use '../utilities/variables' as *;
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: $color-blanco;
+    border-left: 4px solid $color-acento;
+    padding: 24px;
+    transition: transform $transicion, box-shadow $transicion;
+
+    // Cards de Bootstrap: el padding lo pone .card-body
+    &.card {
+        padding: 0;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+    }
+
+    .card-title,
+    .card-text {
+        margin: 0;
+    }
+
+    // Se elevan al pasar el mouse o al enfocar un link adentro
+    &:hover,
+    &:focus-within {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba($color-primario, 0.15);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+}

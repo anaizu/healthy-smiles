@@ -1,0 +1,54 @@
+// ==========================================================
+// Base: reset, fondo y enlaces
+// ==========================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Bootstrap vuelve a poner márgenes en estas etiquetas: los sacamos
+// porque el espacio lo manejamos con gap
+h1,
+h2,
+h3,
+p,
+ul,
+figure,
+address {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+// Fondo y color del texto
+body {
+    background-color: $color-fondo;
+    color: $color-texto;
+}
+
+// Enlaces: cambian de color al pasar el mouse
+a {
+    color: $color-primario;
+    font-weight: 600;
+    transition: color $transicion, background-color $transicion;
+
+    &:hover {
+        color: $color-hover;
+    }
+
+    &:focus {
+        @include foco;
+    }
+
+    &:active {
+        color: $color-primario;
+    }
+}

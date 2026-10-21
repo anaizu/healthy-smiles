@@ -1,0 +1,23 @@
+// ==========================================================
+// Variables: colores, fuentes y medidas del sitio
+// ==========================================================
+
+// Paleta
+$color-primario: #0b4f6c;      // azul petróleo: títulos, header y footer
+$color-fondo: #e8f6f8;         // celeste claro: fondo de la página
+$color-acento: #2bb3b1;        // turquesa: bordes y detalles
+$color-texto: #1f2d3a;         // gris azulado oscuro: texto del cuerpo
+$color-blanco: #ffffff;        // fondo de tarjetas y texto sobre primario
+$color-hover: #127a8a;         // petróleo medio: links y botones al pasar el mouse
+$color-hover-claro: #9fe3e2;   // turquesa claro: links sobre fondo oscuro
+
+// Fuentes
+$fuente-titulos: 'Poppins', sans-serif;
+$fuente-texto: 'Open Sans', sans-serif;
+
+// Breakpoint
+$escritorio: 1024px;
+
+// Medidas que se repiten
+$radio: 8px;
+$transicion: 0.2s ease;

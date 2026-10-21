@@ -1,0 +1,18 @@
+// ==========================================================
+// Mixins: bloques de estilos que se reutilizan
+// ==========================================================
+
+@use 'variables' as *;
+
+// Borde turquesa para marcar el elemento enfocado con el teclado
+@mixin foco {
+    outline: 3px solid $color-acento;
+    outline-offset: 2px;
+}
+
+// Estilos que se aplican desde el ancho de escritorio
+@mixin escritorio {
+    @media (min-width: $escritorio) {
+        @content;
+    }
+}

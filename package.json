@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Sitio web de un centro odontológico ficticio, hecho para el curso de Desarrollo Web de Coderhouse.",
   "scripts": {
-    "sass": "sass scss/main.scss css/style.css --no-source-map",
-    "sass:watch": "sass scss/main.scss css/style.css --no-source-map --watch"
+    "sass": "sass scss/main.scss styles/style.css --no-source-map",
+    "sass:watch": "sass scss/main.scss styles/style.css --no-source-map --watch"
   },
   "repository": {
     "type": "git",

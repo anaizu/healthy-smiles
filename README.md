@@ -2,7 +2,7 @@
 
 Sitio web de un centro odontológico ficticio, hecho para el curso de Desarrollo Web de Coderhouse.
 
-🔗 **Sitio publicado:** https://anaizu.github.io/healthy-smiles/
+🔗 **Sitio publicado en Vercel:** https://healthy-smiles.vercel.app/
 
 ## Tecnologías
 
@@ -11,4 +11,4 @@ Sitio web de un centro odontológico ficticio, hecho para el curso de Desarrollo
 - SCSS (Sass)
 - Bootstrap 5
 - AOS (animaciones al hacer scroll)
-- Git y GitHub Pages
+- Git, GitHub y Vercel
